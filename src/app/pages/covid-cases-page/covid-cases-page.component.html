@@ -1,0 +1,26 @@
+<div class="flex-col justify-center h-full gap-4 p-6">
+  <h2 class="text-center text-2xl pb-5"> Covid Cases </h2>
+
+  <form class="flex justify-center gap-3" [formGroup]="caseInputForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Start date</mat-label>
+      <input formControlName="startDate" matInput [matDatepicker]="startDate">
+      <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+      <mat-datepicker #startDate></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label> End date</mat-label>
+      <input formControlName="endDate" matInput [matDatepicker]="endDate">
+      <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+      <mat-datepicker #endDate></mat-datepicker>
+    </mat-form-field>
+  </form>
+
+  <app-covid-cases-table class="flex-fill flex justify-center"></app-covid-cases-table>
+
+  <mat-paginator (page)="handlePage($event)"
+                 [length]="covidCasesPageService.pageEvent().length"
+                 [pageSize]="10"
+                 [pageIndex]="0"/>
+</div>

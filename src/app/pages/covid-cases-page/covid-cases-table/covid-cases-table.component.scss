@@ -1,0 +1,21 @@
+.table-content {
+  width: 80vw;
+  overflow-x: hidden;
+}
+mat-table {
+  display: inline;
+  min-width: 0;
+  background: white;
+}
+.case-type-header {
+  min-width: 30vw;
+  width: 30vw;
+}
+.date-header {
+  min-width: 30vw;
+  width: 30vw;
+}
+.total-header {
+  min-width: 30vw;
+  width: 30vw;
+}

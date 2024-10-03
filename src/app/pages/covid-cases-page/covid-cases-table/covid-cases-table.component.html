@@ -1,0 +1,27 @@
+<div class="table-content flex justify-center">
+  <mat-table *ngIf="covidCasesPageService.hasLoaded(); else loading" class="mx-auto" [dataSource]="dataSource">
+    <ng-container matColumnDef="Date">
+      <th class="date-header" mat-header-cell *matHeaderCellDef> Date </th>
+      <td mat-cell *matCellDef="let case"> {{case?.date}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="CaseType">
+      <th class="case-type-header" mat-header-cell *matHeaderCellDef> Case Type </th>
+      <td  mat-cell *matCellDef="let case"> {{case?.caseType}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Total">
+      <th class="total-header"mat-header-cell *matHeaderCellDef> Total </th>
+      <td mat-cell *matCellDef="let case"> {{case?.total}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+    <tr mat-row *matRowDef="let myRowData; columns: tableColumns"></tr>
+  </mat-table>
+</div>
+
+<ng-template #loading class="flex justify-center">
+  <mat-spinner></mat-spinner>
+</ng-template>
+
+
