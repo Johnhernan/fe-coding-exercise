@@ -63,9 +63,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "fe-coding-exercise:build",
-            "proxyConfig": "src/proxy.conf.json",
-            "port": 4200
+            "buildTarget": "fe-coding-exercise:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {
